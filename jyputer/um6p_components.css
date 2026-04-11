@@ -1,0 +1,350 @@
+/* UM6P ML Studio – JupyterLab Component Styles v4 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Notebook canvas ─────────────────────────────────────── */
+.jp-Notebook {
+  background: #f0eff2 !important;
+  padding: 20px 40px !important;
+}
+
+/* ── Cell base ───────────────────────────────────────────── */
+.jp-Cell {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e9 !important;
+  border-left: 3px solid transparent !important;
+  border-radius: 8px !important;
+  margin-bottom: 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .04) !important;
+  /* No overflow:hidden – that clips the cell toolbar */
+}
+
+.jp-Cell:hover {
+  border-color: #d0d0d8 !important;
+  border-left-color: transparent !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .07) !important;
+}
+
+/* Active cell: orange left accent, subtle glow */
+.jp-Cell.jp-mod-active {
+  border-color: #e4e4e9 !important;
+  border-left-color: #E5451F !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06) !important;
+}
+
+/* Selected (multi-select) */
+.jp-Cell.jp-mod-selected {
+  background: #fffcfc !important;
+  border-left-color: #fdd8d0 !important;
+}
+
+/* ── Input area ──────────────────────────────────────────── */
+.jp-InputArea-editor {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* ── Prompt  [ ]: ────────────────────────────────────────── */
+.jp-InputArea-prompt,
+.jp-OutputArea-prompt {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  color: #b0b0be !important;
+  min-width: 56px !important;
+  padding-top: 12px !important;
+}
+
+.jp-Cell.jp-mod-active .jp-InputArea-prompt {
+  color: #E5451F !important;
+}
+
+/* ── Output area ─────────────────────────────────────────── */
+.jp-Cell-outputWrapper {
+  border-top: 1px solid #f0f0f4 !important;
+  background: #fafafa !important;
+  border-radius: 0 0 7px 7px !important;
+}
+
+.jp-OutputArea-output {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 13px !important;
+}
+
+/* ── "Click to add a cell" ───────────────────────────────── */
+.jp-Notebook-footer button {
+  border: 1px dashed #d0d0d8 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  color: #9898a8 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 12px !important;
+  width: 100% !important;
+  padding: 8px !important;
+  transition: all 150ms;
+}
+
+.jp-Notebook-footer button:hover {
+  border-color: #E5451F !important;
+  color: #E5451F !important;
+  background: #fff4f2 !important;
+}
+
+/* ── Notebook toolbar ────────────────────────────────────── */
+.jp-NotebookPanel-toolbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e4e4e9 !important;
+  padding: 3px 8px !important;
+}
+
+.jp-Toolbar-item .jp-ToolbarButtonComponent {
+  border-radius: 5px !important;
+  color: #52525e !important;
+}
+
+.jp-Toolbar-item .jp-ToolbarButtonComponent:hover {
+  background: #f4f4f6 !important;
+  color: #111120 !important;
+}
+
+/* ── Top menu bar ────────────────────────────────────────── */
+#jp-top-panel {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e4e4e9 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .05) !important;
+}
+
+.lm-MenuBar {
+  background: #ffffff !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 13px !important;
+}
+
+.lm-MenuBar-item:hover,
+.lm-MenuBar-item.lm-mod-active {
+  background: #fff4f2 !important;
+  color: #E5451F !important;
+  border-radius: 4px !important;
+}
+
+.lm-Menu {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e9 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .10) !important;
+  padding: 4px !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 13px !important;
+}
+
+.lm-Menu-item {
+  border-radius: 5px !important;
+  margin: 1px 4px !important;
+}
+
+.lm-Menu-item.lm-mod-active {
+  background: #fff4f2 !important;
+  color: #E5451F !important;
+}
+
+/* ── Tabs ────────────────────────────────────────────────── */
+.lm-TabBar-tab {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  color: #6b6b7e !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 12.5px !important;
+  padding: 5px 14px !important;
+}
+
+.lm-TabBar-tab:hover {
+  color: #111120 !important;
+  background: #f4f4f6 !important;
+}
+
+.lm-TabBar-tab.lm-mod-current {
+  color: #E5451F !important;
+  border-bottom: 2px solid #E5451F !important;
+  font-weight: 600 !important;
+  background: transparent !important;
+}
+
+/* ── Left sidebar ────────────────────────────────────────── */
+#jp-left-stack {
+  background: #ffffff !important;
+  border-right: 1px solid #e4e4e9 !important;
+}
+
+.jp-SideBar .lm-TabBar-tab.lm-mod-current {
+  background: #fff4f2 !important;
+  color: #E5451F !important;
+  border-left: 2px solid #E5451F !important;
+}
+
+.jp-FileBrowser {
+  background: #ffffff !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.jp-DirListing-item {
+  border-radius: 5px !important;
+  margin: 1px 4px !important;
+  font-size: 12.5px !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.jp-DirListing-item:hover:not(.jp-mod-selected) {
+  background: #f4f4f6 !important;
+}
+
+.jp-DirListing-item.jp-mod-selected {
+  background: #fff4f2 !important;
+  color: #E5451F !important;
+}
+
+.jp-DirListing-header {
+  background: #fafafa !important;
+  border-bottom: 1px solid #eeeeef !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  color: #9898a8 !important;
+}
+
+/* ── Status bar ──────────────────────────────────────────── */
+#jp-bottom-panel,
+.jp-StatusBar {
+  background: #ffffff !important;
+  border-top: 1px solid #e4e4e9 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 11px !important;
+}
+
+/* ── Launcher ────────────────────────────────────────────── */
+.jp-Launcher {
+  background: #f0eff2 !important;
+  padding: 32px 40px !important;
+}
+
+.jp-LauncherCard {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e9 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .04) !important;
+  transition: box-shadow 180ms, transform 180ms, border-color 180ms;
+}
+
+.jp-LauncherCard:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .08) !important;
+  transform: translateY(-2px) !important;
+  border-color: #fdd8d0 !important;
+}
+
+.jp-Launcher-sectionTitle {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #9898a8 !important;
+}
+
+/* ── Dialogs ─────────────────────────────────────────────── */
+.jp-Dialog-content {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid #e4e4e9 !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .14) !important;
+}
+
+.jp-Dialog-header {
+  background: #fafafa !important;
+  border-bottom: 1px solid #e4e4e9 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.jp-Dialog-button.jp-mod-accept {
+  background: #E5451F !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+
+.jp-Dialog-button.jp-mod-accept:hover {
+  background: #c43b18 !important;
+}
+
+.jp-Dialog-button.jp-mod-reject {
+  border: 1px solid #e4e4e9 !important;
+  border-radius: 8px !important;
+}
+
+/* ── Markdown ─────────────────────────────────────────────── */
+.jp-RenderedHTMLCommon {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  line-height: 1.65 !important;
+}
+
+.jp-RenderedHTMLCommon a {
+  color: #E5451F !important;
+}
+
+.jp-RenderedHTMLCommon code {
+  background: #f4f4f6 !important;
+  border: 1px solid #e4e4e9 !important;
+  border-radius: 4px !important;
+  padding: 1px 5px !important;
+  color: #E5451F !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.9em !important;
+}
+
+.jp-RenderedHTMLCommon pre code {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+.jp-RenderedHTMLCommon blockquote {
+  border-left: 3px solid #E5451F !important;
+  background: #fff4f2 !important;
+  border-radius: 0 6px 6px 0 !important;
+  padding: 10px 16px !important;
+}
+
+/* ── Scrollbars & globals ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dddde4;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4c4cc;
+}
+
+::selection {
+  background: rgba(229, 69, 31, .14);
+}
+
+:focus-visible {
+  outline: 2px solid #E5451F;
+  outline-offset: 2px;
+}
+
+
+/* Make the cell input wrapper a flex column so toolbar sits below */
+
+/* Toolbar buttons styled to match the theme */

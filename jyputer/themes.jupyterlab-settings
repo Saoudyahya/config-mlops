@@ -1,0 +1,11 @@
+{
+  "theme": "JupyterLab Light",
+  "theme-scrollbars": true,
+  "overrides": {
+    "ui-font-family": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "code-font-family": "'JetBrains Mono', 'Fira Code', 'Source Code Pro', monospace",
+    "ui-font-size1": "13px",
+    "code-font-size": "13px",
+    "content-font-family": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+  }
+}
