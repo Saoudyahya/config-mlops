@@ -1,92 +1,49 @@
-/* UM6P ML Studio – JupyterLab Component Styles v4 */
+/* UM6P ML Studio – JupyterLab Component Styles v9 */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CURSOR FIX — all three approaches at once to guarantee it works
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --jp-editor-cursor-color: #111120;
+  --jp-code-cursor-width0: 2px;
+}
+
+body {
+  --jp-editor-cursor-color: #111120;
+  --jp-code-cursor-width0: 2px;
+}
+
+/* Direct class — fallback if the variable isn't picked up by CM6 */
+.cm-cursor,
+.cm-dropCursor,
+.cm-editor .cm-cursor,
+.cm-editor .cm-dropCursor {
+  border-left: 2px solid #111120 !important;
+  border-left-color: #111120 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOOLBAR — show on hover only
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.jp-CellHeader {
+  opacity: 0 !important;
+  transition: opacity 150ms ease !important;
+  pointer-events: none !important;
+}
+
+.jp-Cell:hover .jp-CellHeader {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
 
 /* ── Notebook canvas ─────────────────────────────────────── */
 .jp-Notebook {
   background: #f0eff2 !important;
   padding: 20px 40px !important;
-}
-
-/* ── Cell base ───────────────────────────────────────────── */
-.jp-Cell {
-  background: #ffffff !important;
-  border: 1px solid #e4e4e9 !important;
-  border-left: 3px solid transparent !important;
-  border-radius: 8px !important;
-  margin-bottom: 8px !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .04) !important;
-  /* No overflow:hidden – that clips the cell toolbar */
-}
-
-.jp-Cell:hover {
-  border-color: #d0d0d8 !important;
-  border-left-color: transparent !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .07) !important;
-}
-
-/* Active cell: orange left accent, subtle glow */
-.jp-Cell.jp-mod-active {
-  border-color: #e4e4e9 !important;
-  border-left-color: #E5451F !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .06) !important;
-}
-
-/* Selected (multi-select) */
-.jp-Cell.jp-mod-selected {
-  background: #fffcfc !important;
-  border-left-color: #fdd8d0 !important;
-}
-
-/* ── Input area ──────────────────────────────────────────── */
-.jp-InputArea-editor {
-  border: none !important;
-  background: transparent !important;
-}
-
-/* ── Prompt  [ ]: ────────────────────────────────────────── */
-.jp-InputArea-prompt,
-.jp-OutputArea-prompt {
-  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  color: #b0b0be !important;
-  min-width: 56px !important;
-  padding-top: 12px !important;
-}
-
-.jp-Cell.jp-mod-active .jp-InputArea-prompt {
-  color: #E5451F !important;
-}
-
-/* ── Output area ─────────────────────────────────────────── */
-.jp-Cell-outputWrapper {
-  border-top: 1px solid #f0f0f4 !important;
-  background: #fafafa !important;
-  border-radius: 0 0 7px 7px !important;
-}
-
-.jp-OutputArea-output {
-  font-family: 'Inter', system-ui, sans-serif !important;
-  font-size: 13px !important;
-}
-
-/* ── "Click to add a cell" ───────────────────────────────── */
-.jp-Notebook-footer button {
-  border: 1px dashed #d0d0d8 !important;
-  border-radius: 8px !important;
-  background: transparent !important;
-  color: #9898a8 !important;
-  font-family: 'Inter', system-ui, sans-serif !important;
-  font-size: 12px !important;
-  width: 100% !important;
-  padding: 8px !important;
-  transition: all 150ms;
-}
-
-.jp-Notebook-footer button:hover {
-  border-color: #E5451F !important;
-  color: #E5451F !important;
-  background: #fff4f2 !important;
 }
 
 /* ── Notebook toolbar ────────────────────────────────────── */
@@ -316,7 +273,7 @@
   padding: 10px 16px !important;
 }
 
-/* ── Scrollbars & globals ─────────────────────────────────── */
+/* ── Scrollbars ───────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -343,8 +300,3 @@
   outline: 2px solid #E5451F;
   outline-offset: 2px;
 }
-
-
-/* Make the cell input wrapper a flex column so toolbar sits below */
-
-/* Toolbar buttons styled to match the theme */

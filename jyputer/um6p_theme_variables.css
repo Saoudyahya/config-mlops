@@ -1,16 +1,8 @@
 /*-----------------------------------------------------------------------------
-| UM6P ML Studio – JupyterLab Light Theme Variables
-| Overwrites @jupyterlab/theme-light-extension variables.css
+| UM6P ML Studio – JupyterLab Light Theme Variables v2
 | Brand: #E5451F  |  BG: #f0eff2  |  Font: Inter / JetBrains Mono
 |----------------------------------------------------------------------------*/
-
-/*
- * Compatible with @jupyterlab/theme-light-extension
- * All variables must live under :root for public API
- */
-
 :root {
-
   /* ── Fonts ─────────────────────────────────────────────────────────────── */
   --jp-ui-font-scale-factor: 1.2;
   --jp-ui-font-size0: 10px;
@@ -18,17 +10,14 @@
   --jp-ui-font-size2: 15.6px;
   --jp-ui-font-size3: 18.72px;
   --jp-ui-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-
   --jp-ui-font-color0: rgba(0, 0, 0, .87);
   --jp-ui-font-color1: rgba(0, 0, 0, .54);
   --jp-ui-font-color2: rgba(0, 0, 0, .38);
   --jp-ui-font-color3: rgba(0, 0, 0, .24);
-
   --jp-ui-inverse-font-color0: rgba(255, 255, 255, 1);
   --jp-ui-inverse-font-color1: rgba(255, 255, 255, .7);
   --jp-ui-inverse-font-color2: rgba(255, 255, 255, .5);
   --jp-ui-inverse-font-color3: rgba(255, 255, 255, .3);
-
   --jp-content-font-size0: 10px;
   --jp-content-font-size1: 14px;
   --jp-content-font-size2: 16.8px;
@@ -45,7 +34,6 @@
   --jp-content-heading-margin-top: 1.2em;
   --jp-content-heading-margin-bottom: .8em;
   --jp-content-heading-font-weight: 700;
-
   --jp-code-font-size: 13px;
   --jp-code-line-height: 1.7;
   --jp-code-padding: 5px;
@@ -53,28 +41,23 @@
   --jp-code-font-family: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', monospace;
 
   /* ── Layout colours ────────────────────────────────────────────────────── */
-  /* 0 = app shell / outermost bg   1 = panels   2 = hover   3 = active */
   --jp-layout-color0: #f0eff2;
   --jp-layout-color1: #ffffff;
   --jp-layout-color2: #f4f4f6;
   --jp-layout-color3: #ececf0;
   --jp-layout-color4: #e4e4e9;
-
   --jp-inverse-layout-color0: #111120;
   --jp-inverse-layout-color1: #1e1e2e;
   --jp-inverse-layout-color2: #333344;
   --jp-inverse-layout-color3: #52525e;
   --jp-inverse-layout-color4: #6b6b7e;
 
-  /* ── Brand / Accent ─────────────────────────────────────────────────────
-   * This is what makes everything UM6P orange instead of Jupyter blue
-   */
+  /* ── Brand ──────────────────────────────────────────────────────────────── */
   --jp-brand-color0: #c43b18;
   --jp-brand-color1: #E5451F;
   --jp-brand-color2: #f97553;
   --jp-brand-color3: #fdd8d0;
   --jp-brand-color4: #fff4f2;
-
   --jp-accent-color0: #c43b18;
   --jp-accent-color1: #E5451F;
   --jp-accent-color2: #f97553;
@@ -106,24 +89,22 @@
   --jp-border-color3: #f4f4f6;
   --jp-border-radius: 8px;
 
-  /* ── Shadows (Material elevation) ──────────────────────────────────────── */
+  /* ── Shadows ────────────────────────────────────────────────────────────── */
   --jp-shadow-base-lightness: 98;
   --jp-shadow-umbra-color: rgba(0, 0, 0, .08);
   --jp-shadow-penumbra-color: rgba(0, 0, 0, .05);
   --jp-shadow-ambient-color: rgba(0, 0, 0, .04);
 
-  /* ── Cell / notebook ────────────────────────────────────────────────────── */
+  /* ── Cell ───────────────────────────────────────────────────────────────── */
   --jp-cell-padding: 16px;
   --jp-cell-collapser-width: 8px;
   --jp-cell-collapser-min-height: 20px;
   --jp-cell-collapser-not-active-hover-opacity: .6;
-
   --jp-cell-editor-background: #ffffff;
   --jp-cell-editor-border-color: #e4e4e9;
   --jp-cell-editor-box-shadow: inset 0 0 2px rgba(229, 69, 31, .08);
   --jp-cell-editor-active-background: #ffffff;
   --jp-cell-editor-active-border-color: #E5451F;
-
   --jp-cell-prompt-width: 64px;
   --jp-cell-prompt-font-size: .8125em;
   --jp-cell-prompt-letter-spacing: 0em;
@@ -157,10 +138,13 @@
   --jp-input-hover-border-color: #d0d0d8;
   --jp-input-font-color: #111120;
 
+  /* ── CURSOR — dark so it's visible on white background ─────────────────── */
+  --jp-editor-cursor-color: #111120;
+  --jp-code-cursor-width0: 2px;
+
   /* ── Editor (CodeMirror) ────────────────────────────────────────────────── */
   --jp-editor-selected-background: rgba(229, 69, 31, .10);
   --jp-editor-selected-focused-background: rgba(229, 69, 31, .14);
-  --jp-editor-cursor-color: #E5451F;
 
   /* ── Sidebar ────────────────────────────────────────────────────────────── */
   --jp-sidebar-min-width: 220px;
@@ -174,7 +158,7 @@
   /* ── Status bar ─────────────────────────────────────────────────────────── */
   --jp-statusbar-height: 24px;
 
-  /* ── CodeMirror syntax highlighting ────────────────────────────────────── */
+  /* ── CodeMirror syntax ──────────────────────────────────────────────────── */
   --jp-mirror-editor-keyword-color: #d63b12;
   --jp-mirror-editor-atom-color: #7c3aed;
   --jp-mirror-editor-number-color: #7c3aed;
@@ -200,21 +184,15 @@
   --jp-mirror-editor-error-color: #dc2626;
   --jp-mirror-editor-hr-color: #e4e4e9;
 
-  /* ── Vega / Vega-lite (output rendering) ───────────────────────────────── */
   --jp-vega-background: #ffffff;
-
-  /* ── Debugger ────────────────────────────────────────────────────────────── */
   --jp-debugger-color0: #E5451F;
   --jp-debugger-color1: rgba(229, 69, 31, .1);
   --jp-debugger-color2: rgba(229, 69, 31, .2);
-
-  /* ── Icon colour palette ─────────────────────────────────────────────────── */
   --jp-icon-contrast-color0: #111120;
   --jp-icon-contrast-color1: #333344;
   --jp-icon-contrast-color2: #6b6b7e;
   --jp-icon-contrast-color3: #9898a8;
 
-  /* ── scrollbar styling ───────────────────────────────────────────────────── */
   scrollbar-color: #d0d0d8 transparent;
   scrollbar-width: thin;
 }
