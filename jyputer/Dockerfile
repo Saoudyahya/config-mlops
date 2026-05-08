@@ -31,9 +31,11 @@ RUN fc-cache -fv
 # NOTE: jlab-enhanced-cell-toolbar is NOT installed — it has no JupyterLab 4
 # support (https://github.com/jupyterlab-contrib/jlab-enhanced-cell-toolbar/issues/67)
 # and would silently produce zero buttons. We keep the built-in cell toolbar.
+# jyputer/Dockerfile  (around line 30)
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --no-cache-dir \
     dvc dvc-s3 mlflow \
+    boto3 \
     scikit-learn pandas numpy matplotlib seaborn plotly \
     jupyterlab-git jupyterlab-execute-time ipywidgets ipykernel && \
     python -m ipykernel install --sys-prefix \
