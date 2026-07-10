@@ -2,15 +2,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # UM6P ML Studio – JupyterLab Image
 #
-# Font pre-requisite (run once on your machine, inside the jyputer\ folder):
-#   PowerShell:
-#     curl -L "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip" -o JetBrainsMono.zip
-#     Expand-Archive JetBrainsMono.zip -DestinationPath .\jbm-tmp
-#     mkdir fonts
-#     Copy-Item .\jbm-tmp\fonts\ttf\*.ttf .\fonts\
-#     Remove-Item -Recurse .\jbm-tmp, .\JetBrainsMono.zip
-#
-# Then: docker build -t saoudyahya/jupyter-researcher:latest .
+# docker build -t saoudyahya/jupyter-researcher:latest .
 # ─────────────────────────────────────────────────────────────────────────────
 FROM jupyter/scipy-notebook:python-3.11
 
@@ -23,9 +15,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     apt-get install -y --no-install-recommends git fonts-open-sans && \
     rm -rf /var/lib/apt/lists/*
 
-# ── JetBrains Mono (from local fonts/ folder — no network call) ───────────────
-COPY fonts/ /usr/share/fonts/truetype/jetbrains-mono/
-RUN fc-cache -fv
+
 
 # ── Python packages ───────────────────────────────────────────────────────────
 # NOTE: jlab-enhanced-cell-toolbar is NOT installed — it has no JupyterLab 4
