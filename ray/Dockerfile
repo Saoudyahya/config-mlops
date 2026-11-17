@@ -1,4 +1,4 @@
-FROM harbor.local.um6p.ma/infra/ray:2.46.0-py310-cpu
+FROM rayproject/ray:2.46.0-py310-cpu
 
 RUN pip install --no-cache-dir \
     "flaml[automl]==2.3.0" \
